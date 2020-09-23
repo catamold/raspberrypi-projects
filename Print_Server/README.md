@@ -168,7 +168,7 @@ You should now be greeted with a screen displaying the printers available on you
 
 **4.** Now you will need to find your printer within this list, on the left is a list of all the brands, and on the right, is a list of all the printers for that brand that Windows has drivers for. If you don’t find your printer on here, then try looking up your printer’s model online and download the appropriate drivers for it.
 
-In my case, I had to look for the HP LaserJet 1018. If it's not listed, you have first to donwload the printer package, unzip it, then click the **"Have Disk..."**, then **"Browse"** and select the **HPLJ1018.INF** file inside unziped folder.
+In my case, I had to look for the HP LaserJet 1018. If it's not listed, you have first to [download the printer package](https://github.com/catamold/raspberrypi-projects/releases/download/v1.0/hp-laserjet-1018-basic-driver.zip), unzip it, then click the **"Have Disk..."**, then **"Browse"** and select the **HPLJ1018.INF** file inside unziped folder.
 
 Once you have selected your printer, press the **"Ok"** button.
 

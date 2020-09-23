@@ -8,3 +8,4 @@ Sections:
 - Setting up SAMBA for the Pi Print Server
 - Adding a printer to CUPS
 - Adding a Raspberry Pi Print Server to Windows
+- [HP LaserJet 1018 driver](https://github.com/catamold/raspberrypi-projects/releases/download/v1.0/hp-laserjet-1018-basic-driver.zip) 
