@@ -160,6 +160,8 @@ After completing these steps, you'll once again be able to see and connect to ne
 
 Of course, you should only use these steps as a temporary solution to regain access to your files stored on the network. Ideally, if you're saving your data on a drive connected to a router with file sharing capabilities or NAS, you should contact the device manufacturer for specific instructions to update the device to a version that supports SMBv2.02 or later.
 
+If you can't access the shared folder because your organization's security policies block, then open **Run** from windows and type `gpedit.msc`. Then on the left side of the **"Local Group Policy Editor"** window, expand **Administrative Templates->Network->Lanman Workstation**, then double click on **"Enable insecure guest logons"** and set it to **"Enabled"**. 
+
 **2.** Double click on your Raspberry Pi’s share, it may ask for a username and password. If just pressing enter doesn’t work, try entering pi as the username.
 
 You should now be greeted with a screen displaying the printers available on your Raspberry Pi print server. Right click the printer and press **"Connect..."** or double click on the printer you want to have connected to your computer.
