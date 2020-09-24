@@ -2,6 +2,7 @@
 
 ### Personal Cloud Storage
 _released on September 24, 2020_
+
 Sections:
 - Preparing Raspbian Stretch for Buster
 - Updating Raspbian Stretch to Raspbian Buster
@@ -18,6 +19,16 @@ Sections:
 - Using System Cron with Owncloud
 - Port Forwarding & External Access
 - Setting Up Raspberry Pi Port Forwarding
+
+### Minecraft Server
+_released on September 24, 2020_
+
+Sections:
+- Install the java runtime environment
+- Download Minecraft’s server software
+- Read and confirm Minecraft’s end-user license agreement
+- Start the Raspberry Pi Minecraft server
+- Adjust and connect to your Raspberry Pi Minecraft server
 
 ### Cloud Printer
 _released on September 23, 2020_
