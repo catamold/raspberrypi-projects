@@ -1,6 +1,7 @@
 ---
 title: Minecraft Server
-has_children: false
+has_children: true
+nav_order: 1
 ---
 
 ## Minecraft Server
@@ -61,12 +62,62 @@ Whatever you choose to do, make sure that you don’t set the starting RAM **("-
 ### Adjust and connect to your Raspberry Pi Minecraft server
 **1.** You don’t actually need the GUI, though. If you’d rather launch the server without it, you can append nogui to the end of the launch command, like so:
 
-`java -Xms1G -Xmx1G -jar server.jar nogui`
+`java -Xms1G -Xmx1G -jar [server_name_downloaded.jar] nogui`
 
 **2.** You can also mess with default settings on your server by accessing the server.properties file within your Minecraft_Server folder. With your server shut down, just open the file with your text editor of choice. We’ll use nano:
 
 `sudo nano server.properties`
 
-Within server.properties, you can change settings like the maximum number of players and the default view distance.
+Within server.properties, you can change settings like the maximum number of players and the default view distance. You change these and other settings to whatever you like however you want, but keep in mind the Pi can’t handle too much processing.
+```
+view-distance=5
+max-player=5
+```
 
 **3.** If I’m connecting to **MY OWN** Server, find the **server.properties** file in the server folder, then the `online-mode=true` line, and change it to `online-mode=false`. Now you can connect to the server.
+
+### Boot on Startup
+To have the server start on boot, we will need to do a few extra steps.
+
+**1.** We will need to create a service for the Minecraft server so let’s start writing the service file by entering the command below.
+
+`sudo nano /lib/systemd/system/minecraftserver.service`
+
+**2.** In this file you will need to enter the following text.
+
+This file defines the service, so the service manager knows how and what to run. Don’t forget to update the spigot version number whenever you upgrade.
+```
+[Unit]
+Description=Minecraft Spigot Server
+
+[Service]
+User=pi
+Group=pi
+Restart=on-abort
+WorkingDirectory=/home/pi/Minecraft_Server/
+ExecStart=/usr/bin/java -Xms512M -Xmx1008M -jar /home/pi/Minecraft_Server/[server_name_downloaded.jar] nogui
+
+[Install]
+WantedBy=multi-user.target
+```
+Once done, save the file by pressing **CTRL + X** then **Y** followed by **ENTER**.
+
+**3.** Now, we will need to enable the service. You can enable the service by running the command below:
+
+`sudo systemctl enable minecraftserver.service`
+
+**4.** You should now be able to start the Minecraft server by simply using the following command:
+
+`sudo systemctl start minecraftserver.service`
+
+**5.** Using a similar command, you can check on the status of the service. Checking the status is great for debugging.
+
+`sudo systemctl status minecraftserver.service`
+
+**6.** You can stop the server by using the following command:
+
+`sudo systemctl stop minecraftserver.service`
+
+**7.** To disable the boot on startup, use the following command:
+
+`sudo systemctl disable minecraftserver.service`

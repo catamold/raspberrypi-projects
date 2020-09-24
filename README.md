@@ -29,6 +29,7 @@ Sections:
 - Read and confirm Minecraft’s end-user license agreement
 - Start the Raspberry Pi Minecraft server
 - Adjust and connect to your Raspberry Pi Minecraft server
+- Boot on Startup
 
 ### Cloud Printer
 _released on September 23, 2020_
