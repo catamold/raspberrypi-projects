@@ -1,5 +1,24 @@
 ## Raspberry Pi 3 Projects
 
+### Personal Cloud Storage
+_released on September 24, 2020_
+Sections:
+- Preparing Raspbian Stretch for Buster
+- Updating Raspbian Stretch to Raspbian Buster
+- Setting up The Raspberry Pi Owncloud Server
+- Setting up NGINX for Owncloud and HTTPS
+- Tweaking PHP for Owncloud
+- Adding Swap Memory
+- Setting up MYSQL on a Raspberry Pi
+- Setting up a MySQL Database & User for Owncloud
+- Downloading & Extracting Owncloud
+- Mounting & Setting up a Drive
+- Setting up Owncloud
+- Setting up Memory Caching for Owncloud
+- Using System Cron with Owncloud
+- Port Forwarding & External Access
+- Setting Up Raspberry Pi Port Forwarding
+
 ### Cloud Printer
 _released on September 23, 2020_
 
