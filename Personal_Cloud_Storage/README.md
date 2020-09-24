@@ -1,6 +1,7 @@
 ---
 title: Personal Cloud Storage
-has_children: false
+has_children: true
+nav_order: 1
 ---
 
 ## Personal Cloud Storage
@@ -458,7 +459,7 @@ We can grant these privileges by running the following command:
 
 To flush the privileges, all we need to do is run the following command:
 
-`FLUSH PRIVILEGES;
+`FLUSH PRIVILEGES;`
 
 **6.** Once the privilege table has been flushed, we can proceed to install and set up the Owncloud software.
 
@@ -517,34 +518,59 @@ These instructions are for mounting and allowing Owncloud to store files onto an
 
 **2.** Now let’s make a directory we can mount.
 
-`sudo mkdir /media/ownclouddrive`
+```
+sudo mkdir /media/ownclouddrive
+sudo mount /dev/sda1 /media/ownclouddrive
+```
 
-**3.** Now we need to get the **GID**, **UID**, and the **UUID** as we will need to use these soon.
+If this error below occur, type `sudo umount /media/ownclouddrive`.
+
+```
+Mount is denied because the NTFS volume is already exclusively opened. 
+The volume may be already mounted, or another software may use it which
+could be identified for example by the help of the 'fuser' command.
+```
+
+**3.** Lets make a data directory where the data is stored:
+```
+cd /media/ownclouddrive
+sudo mkdir data
+```
+
+**4.** Now lets make sure the drive is mounted at boot.
+
+`sudo nano /etc/fstab`
+
+**5.** Now we need to get the **GID**, **UID**, and the **UUID** as we will need to use these soon.
 
 Enter the following command for the **GID**:
 
 `id -g www-data`
 
-**4.** Now for the **UID** enter the following command:
+**6.** Now for the **UID** enter the following command:
 
 `id -u www-data`
 
-**5.** Also if we get the **UUID** of the hard drive, the Pi will remember this drive even if you plug it into a different USB port.
+**7.** Also if we get the **UUID** of the hard drive, the Pi will remember this drive even if you plug it into a different USB port.
 
 `ls -l /dev/disk/by-uuid`
 
 Copy the light blue letters and numbers of the last entry (Should have something like -> **../../sda1** at the end of it).
 
-**6.** Now let’s add your drive into the fstab file so that it will boot with the correct permissions.
+**8.** Now let’s add your drive into the fstab file so that it will boot with the correct permissions.
 
 `sudo nano /etc/fstab`
 
-**7.** Now add the following line to the bottom of the file, updating UID, GUID and the UUID with the values we got above. (The following should all be on a single line)
+**9.** Now add the following line to the bottom of the file, updating UID, GUID and the UUID with the values we got above. (The following should all be on a single line)
 ```
 UUID=[UUID] /media/ownclouddrive auto nofail,uid=[UID],gid=[GID],umask=0027,dmask=0027,noatime 0 0
 ```
 
-**8.** Reboot the Raspberry Pi, and the drives should automatically be mounted. If they are mounted, we’re all good to go.
+**10.** Lets make sure ownCloud can write to the disk
+
+`sudo chown -R www-data:www-data /media/ownclouddrive/data`
+
+**11.** Reboot the Raspberry Pi, and the drives should automatically be mounted. If they are mounted, we’re all good to go.
 
 Note: If you get an error stating the Pi is in emergency mode at boot up then this likely means a problem with the fstab entry. Just edit the fstab file (`sudo nano /etc/fstab`) and remove the added line or look for a mistake and fix it.
 
@@ -563,7 +589,7 @@ On **Chrome**, you click the **Show advanced button**, then click **"Proceed to 
 
 1. The first thing you need to do is specify a **username** and **password** for your Owncloud admin account.
 
-2. Next, we need to bring up the storage and database settings. You can do this by clicking the **"Storage & database"** dropdown. If you are using a different data folder, you can specify it now by using the Data folder textbox, other than **/var/www/owncloud/data**.
+2. Next, we need to bring up the storage and database settings. You can do this by clicking the **"Storage & database"** dropdown. If you want to use the internal Raspberry Pi usage, specify **/var/www/owncloud/data**. If you want to use the external usage, remove the current location and add **/media/ownclouddrive/data**.
 
 3. We then need to bring up the MySQL database options. You can find these by clicking the **MySQL/MariaDB** toggle.
 
