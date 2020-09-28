@@ -6,25 +6,10 @@ has_children: false
 
 ## Server Monitor
 
-### Raspberry Pi Monitor CPU and RAM usage
-Let start by installing htop:
-
-`apt-get install htop -y`
-
-Then just type `htop` on the **Terminal**.
-
-Or you can check your system free memory and update the results of the free command every two seconds:
-
-`watch free -m`
-
 ### Minecraft Server log file
 The first time you start the service, it will generate several configuration files and directories, including the Minecraft world. Use the tail command to monitor the server log file:
 
 `tail -f /home/pi/Minecraft_Server/logs/latest.log`
-
-### Minecraft Manually Save Server
-
-`cp -r /home/pi/Minecraft_Server/world /home/pi/Minecraft_Server/Saves/world_[date]`
 
 ### Minecraft Server admin commands
 User must also install Screen in a bid to keep the servers running in the background even after closing the console. To do so, type the following command:
@@ -59,4 +44,3 @@ Remove screen:
 ```
 screen -X -S [id-session] quit
 ```
-
