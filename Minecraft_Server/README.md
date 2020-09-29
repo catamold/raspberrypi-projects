@@ -24,6 +24,10 @@ We’ve chosen to install the “headless” version of the JRE because it’s a
 ### Download Minecraft’s server software
 **1.** There are a few different apps that can run Minecraft servers, but we’re going to keep things official and use the one that [Minecraft offers](http://www.mc-download.com/index.php?action=downloadfile&filename=minecraft_server.1.7.8.jar&directory=Minecraft%20Versions%20Official/Minecraft%20Server&) for free on its website. Head to Minecraft.net and download the latest and greatest version of server.jar.
 
+To download a server file in Terminal, simply use the following command then the URL:
+
+`wget https://XXX.com/example-URL.jar`
+
 **2.** That will land **server.jar** in your downloads folder, but let’s not leave it there. Go ahead and make a folder for your server within the home directory. You can do that in File Manager or just type this command into Terminal:
 
 `mkdir Minecraft_Server`
