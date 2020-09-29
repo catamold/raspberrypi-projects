@@ -9,7 +9,7 @@ has_children: false
 ### Device configuration
 **1.** To make data monitoring available on user's owncloud server, on Security page of the owncloud create an App password / token. For isntace the username: `talina` and pasword/token: `DKYYH-KKHUR-HZDXM-JFASK`
 
-**2.** To register the device, for instance the core temperature of the Raspberry Pi, we will create the following POST request, by writing a random id to **deviceId* and some stuff to **deviceName**, **deviceType**, **deviceGroup**, **deviceParentGroup** and **deviceDataTypes**:
+**2.** To register the device, for instance the core temperature of the Raspberry Pi, we will create the following POST request, by writing a random id to **deviceId** and some stuff to **deviceName**, **deviceType**, **deviceGroup**, **deviceParentGroup** and **deviceDataTypes**:
 
 `curl -k -v -H "Authorization: Basic $(echo -n talina:DKYYH-KKHUR-HZDXM-JFASK | base64)" -H "Accept: application/json" -H "Content-Type:application/json" -d '{"deviceId":"0002-0655-0000-0000-0000-0001","deviceName":"Pi_Temperature","deviceType":"Raspberry_Pi_3B","deviceGroup":"Raspberry","deviceParentGroup":"Server 0","deviceDataTypes":[{"type":"cpu-core-temp","description":"CoreTemp","unit":"°C"}]}' https://192.168.1.25/index.php/apps/sensorlogger/api/v1/registerdevice/`
 
@@ -45,8 +45,6 @@ has_children: false
 - _9999_ ... unknown problem
 
 ### Automate POST data requests
-To automate the data from device's temperature, we use [crontab](https://catamold.github.io/raspberrypi-projects/Minecraft_Server/Server_Save/README.html) to run the [temperatureLogger.sh bash file](https://...) every 1 minute:
+To automate the data from device's temperature, we use [crontab](https://catamold.github.io/raspberrypi-projects/Minecraft_Server/Server_Save/README.html) to run the [temperatureLogger.sh bash file](https://github.com/catamold/raspberrypi-projects/releases/download/v3.0/temperatureLogger.sh) every 1 minute. The script file runs every 5 seconds for 12 times:
 
-`
-* * * * * /home/pi/Scripts/temperatureLogger.sh
-`
+`* * * * * /home/pi/Scripts/temperatureLogger.sh`
