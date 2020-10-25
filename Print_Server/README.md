@@ -1,6 +1,7 @@
 ---
 title: Print Server
-has_children: false
+has_children: true
+nav_order: 1
 ---
 
 ## Print Server

@@ -6,10 +6,10 @@ has_children: false
 
 ## Minecraft Save Server
 
-### Manually Save using Terminal:
+### Manually Save using Terminal
 `cp -r /home/pi/Minecraft_Server/world /home/pi/Minecraft_Server/Saves/world_[date]`
 
-### Automate Save using Cron:
+### Automate Save using Cron
 Cron is a tool for configuring scheduled tasks on Unix systems. It is used to schedule commands or scripts to run periodically and at fixed intervals. First, we access crontab bypassing command below:
 
 `sudo crontab -e`
