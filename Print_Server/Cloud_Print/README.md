@@ -20,4 +20,4 @@ Check the status of a custom printer (active):
 `lpstat -d HP_LaserJet_1018 -t | grep 'idle'`
 
 ## Automate files print directly from ownCloud server using Cron
-To automate the print directly from the cloud, we use crontab to run the autoPrint_ownCloud.sh bash file every 1 minute. The script checks if files are stored in the **Print_HP** directory from ownCloud, then print all the documents and delete them from cloud.
+To automate the print directly from the cloud, we use crontab to run the [autoPrint_ownCloud.sh](https://github.com/catamold/raspberrypi-projects/releases/download/v1.0/autoPrint_ownCloud.sh) bash file every 1 minute. The script checks if files are stored in the **Print_HP** directory from ownCloud, then print all the documents and delete them from cloud.
