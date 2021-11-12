@@ -1,10 +1,10 @@
 ---
-title: Browser-Based Remote Desktop
+title: Web-Based Remote Desktop
 parent: Browser Based Server
 has_children: false
 ---
 
-## Browser-Based Remote Desktop
+## Web-Based Remote Desktop
 
 ### Installing Guacamole
 **1.** Install the following dependencies.
@@ -56,7 +56,7 @@ cd guacamole-client-0.9.14
 
 **9.** Create a location for Guacamole configuration files.
 
-` sudo mkdir /etc/guacamole`
+`sudo mkdir /etc/guacamole`
 
 **10.** Edit **/etc/guacamole/guacamole.properties**.
 

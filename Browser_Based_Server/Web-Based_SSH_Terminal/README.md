@@ -40,15 +40,19 @@ SHELLINABOX_ARGS="--o-beep -s /:SSH:[Your-IP-Adress] --localhost-only"
 OPTS="--user-css Normal:+white-on-black.css,Reverse:-black-on-white.css --disable-ssl-menu -s /:LOGIN"
 ```
 
-**5.** Start the **Shellinabox** service.
+**5.** Start the **Shellinabox** service. The **Shellinabox** service will automatically start whenever you restart the Raspberry Pi.
 
 ```
 sudo service shellinaboxd start
 sudo /etc/init.d/shellinabox restart
 ```
 
-**6.** Now let’s verify whether Shellinabox is running on port 6175 using **“netstat”** command.
+**6.** Now let’s verify whether **Shellinabox** is running on port **6175** using **“netstat”** command.
 
 `/etc/init.d/shellinabox status`
 
 **7.** Now open up your web browser, and navigate to **https://[Your-IP-Adress]:6175**. You should be able to see a web-based **SSH terminal**. Login using your **username** and **password** and you should be presented with your shell prompt. You can **right-click** to use several features and actions, including changing the look and feel of your shell.
+
+**8.** To stop the **Shelinabox** server type the following:
+
+`sudo service shellinaboxd stop`
