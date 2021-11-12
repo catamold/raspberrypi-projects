@@ -1,4 +1,4 @@
-## Raspberry Pi 3 Projects
+## Raspberry Pi Projects
 
 ### Cloud Printer
 _released on September 23, 2020_
