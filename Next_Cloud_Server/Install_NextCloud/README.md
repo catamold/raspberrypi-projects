@@ -21,7 +21,7 @@ You now need to download and extract the **NextCloud archive**:
 
 `cd /var/www/html`
 
-**2.** Get the latest NextCloud from [here](https://download.nextcloud.com/server/releases/) (i.e. **nextcloud-15.0.8.zip** or **.tar.bz2 archive**.
+**2.** Get the latest NextCloud from [here](https://download.nextcloud.com/server/releases/) (i.e. **nextcloud-15.0.8.zip** or **.tar.bz2 archive**).
 
 `sudo wget https://download.nextcloud.com/server/releases/nextcloud-15.0.8.zip`
 
@@ -64,11 +64,12 @@ quit
 
 ### NextCloud configuration
 
-**1.** Open the following URL in your browser: [https://[IP]/nextcloud]. Replace the **“IP”** with the Raspberry Pi IP address.
+**1.** Open the following URL in your browser: **https://[IP]/nextcloud**. Replace the **“IP”** with the Raspberry Pi IP address.
 
 **2.** A form will show up. Choose a **username** and **password** for NextCloud.
 
 **3.** Enter the credentials we just created in MySQL:
+
 – **User**: nextcloud
 – **Password**: “password” *(your password)*
 – **Database**: nextcloud
