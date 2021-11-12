@@ -8,3 +8,6 @@ url: "https://catamold.github.io"
 author:
   name: Catalin Moldovan
   github: catamold
+  
+favicon: icons/favicon.ico
+use_logo: true
