@@ -1,5 +1,28 @@
 ## Raspberry Pi Projects
 
+
+### Browser Based Server
+_released on [undefined]_
+
+Sections:
+- Web-Based Remote Desktop
+- Web-Based SSH Terminal
+
+### Next Cloud Server
+_released on [undefined]_
+
+Sections:
+- Enabling SSL
+- Install NextCloud
+- Update NextCloud
+
+### Raspberry Commands
+_released on [undefined]_
+
+Sections:
+- Share Files
+- Back Up Pi SD Card
+
 ### Cloud Printer
 _released on September 23, 2020_
 
