@@ -21,6 +21,7 @@ _released on [undefined]_
 
 Sections:
 - Share Files
+- Swap Space
 - Back Up Pi SD Card
 
 ### Cloud Printer
