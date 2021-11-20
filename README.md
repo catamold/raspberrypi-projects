@@ -66,9 +66,11 @@ Sections:
 - Adjust and connect to your Raspberry Pi Minecraft server
 - Boot on Startup
 
-### NAS Storage
+### FTP Storage
 _released on September 23, 2020_
 
 Sections:
-- Setting up Samba on your Raspberry Pi
-- Connecting to your Samba Server on Windows
+- Create a user for FTP server connection
+- Mount USB HDD/SSD into Raspberry Pi
+- Setting up an FTP Server on the Raspberry Pi
+- Connect to the FTP server using FileZilla/Windows 10 network location
