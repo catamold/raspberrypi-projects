@@ -1,6 +1,7 @@
 ---
 title: FTP Server
-has_children: false
+has_children: true
+nav_order: 1
 ---
 
 ## FTP Server
@@ -64,7 +65,7 @@ sudo fdisk -l
 `sudo chown ftp-user-[username]:ftp-user-[username] /home/ftp-user-[username]/ssd-storage`
 
 ### Setting up an FTP Server on the Raspberry Pi
-**1.** Install vsftpd to your Raspberry Pi by using the command below.
+**1.** Install **vsftpd (Very Secure FTP Daemon)** to your Raspberry Pi by using the command below.
 
 `sudo apt install vsftpd`
 
