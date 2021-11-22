@@ -17,9 +17,23 @@ xferlog_enable=YES
 xferlog_file=/var/log/vsftpd.log
 log_ftp_protocol=YES
 xferlog_std_format=NO 
+
+allow_anon_ssl=NO
+force_local_data_ssl=YES
+force_local_logins_ssl=YES
+ssl_tlsv1=YES
+ssl_sslv2=NO
+ssl_sslv3=NO
+pasv_min_port=12000
+pasv_max_port=12100
 ```
 
-**2.** You can check the **vsftpd session logs** to see a history of connections made to your **FTP server**.
+**2.** For our new settings to take effect we need to restart the **vsftpd** daemon on the Raspberry Pi.
+
+`sudo service vsftpd restart`
+
+
+**3.** You can check the **vsftpd session logs** to see a history of connections made to your **FTP server**.
 
 `sudo cat /var/log/vsftpd.log`
 
@@ -38,7 +52,7 @@ auth     required       pam_listfile.so item=user sense=deny file=/etc/ftpusers 
 auth     required       pam_listfile.so item=host sense=deny file=/etc/ftphosts onerr=succeed
 ```
 
-## Install fail2bam
+## Install fail2ban
 
 **1.** To install the **fail2ban** package for your Linux distribution type the following command:
 
@@ -137,4 +151,3 @@ Status for the jail: vsftpd
 **1.** Create an account on [NO-IP](https://my.noip.com/).
 
 **2.** Port forwarding on all routers.
-

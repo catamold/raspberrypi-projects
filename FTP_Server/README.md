@@ -81,6 +81,7 @@ local_enable=YES
 write_enable=YES
 local_umask=022
 chroot_local_user=YES
+chroot_list_enable=NO
 ```
 
 Also you will need **add** the following lines (**“local_root”** option means that the user will be locked to their home directory).
@@ -101,6 +102,10 @@ local_root=/home/$USER
 **5.** You can now reboot the operating system and test the connection in a FTP program.
 
 `sudo shutdown -r now`
+
+**6.** Check the open ports on Raspberry Pi by typing the following command:
+
+`netstat -vatn`
 
 ### Connect to the FTP server using FileZilla
 Connect using the following credentials:
