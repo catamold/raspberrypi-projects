@@ -32,12 +32,12 @@ sudo fdisk -l
 
 `sudo chmod 775 /usb-ssd-storage`
 
-**5.** Make the USB HDD/SSD mount permanently, by editing the **‘fstab’** file. Add the following line to the bottom of the file:
+**5.** Make the USB HDD/SSD mount permanently, by editing the **‘fstab’** file. We will **mount an external drive at boot time only if it is plugged in**, for that we will add **auto** and **nofail** to the entry (*Otherwise when you boot up Raspberry Pi, a start job will run for /usb-ssd-storage for about 90 seconds, then it will return an error and the boot will be stuck until you take action using the terminal*) Add the following line to the bottom of the file:
 
 `sudo nano /etc/fstab`
 
 ```
-/dev/sda[NO.] /usb-ssd-storage ntfs defaults 0 0
+/dev/sda[NO.] /usb-ssd-storage ntfs defaults,auto,nofail 0 0
 ```
 
 **6.** Apply changes, by rebooting the operating system.
@@ -57,7 +57,7 @@ sudo fdisk -l
 `sudo nano /etc/fstab`
 
 ```
-/usb-ssd-storage/ftp-user-[username]/files /home/ftp-user-[username]/ssd-storage none bind 0 0
+/usb-ssd-storage/ftp-user-[username]/files /home/ftp-user-[username]/ssd-storage none bind,auto,nofail 0 0
 ```
 
 **10.** Now change the ownership of this folder to the **‘ftp-user-[username]’** user:
