@@ -39,12 +39,21 @@ sudo apt full-upgrade
 
 `hostname -I`
 
-**Optional** Create a user and modify the user's home directory to read, write and execute only. Then login using the user credentials.
+***Optional.*** Create a user and modify the user's home directory to read, write and execute only. Then login using the user credentials.
 
 ```
 sudo adduser ftp-user-[username]
 sudo chmod 700 /home/ftp-user-[username]
 ```
+
+To add an existing user account to a group on your system, use the **usermod** command. For example, to add the user geek to the group geekgroup, use the following command:
+
+`sudo usermod -a -G geekgroup geek`
+
+List all members of a group using **/etc/group** file.
+
+`grep synch-drive /etc/group`
+
 
 **2.** Before we continue any further, we will need to run **Syncthing** once to generate **config** files in your user account.
 
@@ -130,6 +139,3 @@ WantedBy=multi-user.target
 **2.** In the **Syncthing interface** of your PC you should see something like this **raspberrypi wants to share folder "Default Folder" (default). Share this folder?**. Press **Share**.
 
 **3.** You should now see that your folder has now begun synchronizing. Once it has finished synchronizing, you should see both the folder and the device marked as **“Up to date”**.
-
-**Optional** Within the file settings dialog we will need to change to the **“File Versioning” tab**. You can **Clean out after** 30 days the **Trash Can File Versioning**.
-
