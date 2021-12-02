@@ -1,5 +1,16 @@
 ## Raspberry Pi Projects
 
+### Synchronizing Files
+_released on [undefined]_
+
+Sections:
+- Installing Syncthing
+- Allowing Outside Access to your Syncthing Web Interface
+- Setting up Syncthing as a Service on the Raspberry Pi
+- Securing the Syncthing Interface
+- Retrieving your Devices Syncthing ID
+- Adding a Device to your Raspberry Pi’s Syncthing Pool
+- Synchronizing a Folder with your Connected Devices
 
 ### Browser Based Server
 _released on [undefined]_
