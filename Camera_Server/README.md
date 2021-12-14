@@ -20,7 +20,7 @@ sudo apt install autoconf automake build-essential pkgconf libtool git libzip-de
 sudo apt-get install ffmpeg libmariadb3 libpq5 libmicrohttpd12 -y
 ```
 
-**3.** Install **motion**. You can also install the latest version of **motion** from [Mition-Project](https://github.com/Motion-Project/motion/releases):
+**3.** Install **motion**. You can also install the latest version of **motion** from [Motion-Project](https://github.com/Motion-Project/motion/releases):
 
 ```
 wget https://github.com/Motion-Project/motion/releases/download/release-4.3.2/pi_buster_motion_4.3.2-1_armhf.deb 
@@ -117,10 +117,11 @@ start_motion_daemon=yes
 
 `sudo reboot`
 
-**4.** To *stop/start* or *check* the **motion** server, type the following:
+**4.** To *stop/start/restart* or *check* the **motion** server, type the following:
 
 ```
 sudo service motion stop
 sudo service motion start
+sudo service motion restart
 sudo service motion status
 ```

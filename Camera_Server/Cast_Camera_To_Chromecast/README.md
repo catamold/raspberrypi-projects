@@ -1,6 +1,6 @@
 ---
 title: Cast Camera To Chromecast
-parent: Next Cloud Server
+parent: Camera Server
 has_children: false
 ---
 
