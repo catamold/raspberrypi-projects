@@ -14,6 +14,10 @@ sudo apt-get install libcairo2-dev libjpeg62-turbo-dev libpng12-dev libossp-uuid
 sudo apt-get install libfreerdp-dev libpango1.0-dev libssh2-1-dev libvncserver-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev
 ```
 
+In case you receive this error: **Package libpng12-dev has no installation candidate**, the package *libpng12-dev* was dropped after 16.04. It's been gone a long time. Try **'libpng-dev'** instead.
+
+In case you receive this error: **Unable to locate package libfreerdp-dev**, the package is obsolete, you should install **'freerdp2-dev'** instead.
+
 **2.** Check the name of the latest version of [Guacamole source code server](https://sourceforge.net/projects/guacamole/files/current/source/) (i.e. **guacamole-server-0.9.14.tar.gz**, then download it, uncompress it and then change into the new directory.
 
 ```

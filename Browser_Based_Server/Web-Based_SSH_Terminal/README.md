@@ -24,11 +24,14 @@ sudo apt-get install openssl shellinabox
 # TCP port that shellinboxd's webserver listens on
 SHELLINABOX_PORT=6175
 
+# this should be used
+SHELLINABOX_ARGS="--no-beep"
+
 # specify the IP address of a destination SSH server
-SHELLINABOX_ARGS="--o-beep -s /:SSH:[Your-IP-Adress]"
+SHELLINABOX_ARGS="--no-beep -s /:SSH:[Your-IP-Adress]"
 
 # if you want to restrict access to shellinaboxd from localhost only
-SHELLINABOX_ARGS="--o-beep -s /:SSH:[Your-IP-Adress] --localhost-only"
+SHELLINABOX_ARGS="--no-beep -s /:SSH:[Your-IP-Adress] --localhost-only"
 ```
 
 **4.** At the end of the file you can also add additional custom options to the **Web-browser SSH Terminal page**.
@@ -43,7 +46,7 @@ OPTS="--user-css Normal:+white-on-black.css,Reverse:-black-on-white.css --disabl
 **5.** Start the **Shellinabox** service. The **Shellinabox** service will automatically start whenever you restart the Raspberry Pi.
 
 ```
-sudo service shellinaboxd start
+sudo service shellinabox start
 sudo /etc/init.d/shellinabox restart
 ```
 
@@ -55,4 +58,4 @@ sudo /etc/init.d/shellinabox restart
 
 **8.** To stop the **Shelinabox** server type the following:
 
-`sudo service shellinaboxd stop`
+`sudo service shellinabox stop`
