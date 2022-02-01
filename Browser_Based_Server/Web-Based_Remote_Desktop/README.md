@@ -34,6 +34,29 @@ sudo make
 sudo make install
 ```
 
+In case you receive this error:
+
+```        
+typescript.c: In function ‘guac_terminal_typescript_alloc’:                                 
+typescript.c:133:46: error: ‘%s’ directive writing 6 bytes into a region of size between 0 and 2047 [-Werror=format-overflow=]
+  133 |     sprintf(typescript->timing_filename, "%s.%s", typescript->data_filename,
+```
+
+Then paste the following:
+
+```
+sudo apt-get remove gcc g++
+
+sudo apt-get update && \
+sudo apt-get install build-essential software-properties-common -y && \
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y && \
+sudo apt-get update && \
+sudo apt-get install gcc-snapshot -y && \
+sudo apt-get update && \
+sudo apt-get install gcc-6 g++-6 -y && \
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+```
+
 **4.** When finished, change out of the guacamole directory, back to home directory, download and uncompress the [Guacamole Client Source Code](https://sourceforge.net/projects/guacamole/files/current/source/) with the same version as the server.
 
 ```
