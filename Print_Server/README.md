@@ -136,6 +136,10 @@ Once you are happy with the settings, feel free to press **"Continue"**.
 
 Now we will go over how to add our newly setup Raspberry Pi print server to Windows. It should be a relatively easy process thanks to setting up SAMBA earlier in the tutorial.
 
+**9.** In case the Model of the printer ends with **hpcups 3.21.2, requires proprietary plugin**, then open the terminal in **sudo su** mode and type the following command and follow the intructions on client:
+
+`hp-setup -i`
+
 ### Adding a Raspberry Pi Print Server to Windows
 **1.** Adding a CUPS printer to Windows can be a bit of work, mainly because you need to select the driver for Windows to be able to connect to and understand the printer.
 
