@@ -4,11 +4,9 @@ parent: Print Server
 has_children: false
 ---
 
-## Install Printer
+## Install HP Linux Imaging and Printing
 
-### HP Linux Imaging and Printing
-
-#### Installation
+### Installation
 
 First, fearch for HPLIP software:
 
@@ -37,7 +35,7 @@ Downloading firmware to device hp:/usb/HP_LaserJet_1020?serial=JL59GCF...
 Firmware download successful.
 ```
 
-#### Setup printer
+### Setup printer
 
 Next, configure your printer using `hp-setup`. Use interactive mode `-i` instead of graphical UI, if not using a display.
 
@@ -109,7 +107,7 @@ It will automatically remove the existing printer, or you can choose a printer t
 ---
 ```
 
-#### Print a document
+### Print a document
 
 To print a document with the newly printer configured, use the `hp-print` command:
 
@@ -135,7 +133,7 @@ Usage: hp-print [DEVICE_URI|PRINTER_NAME] [MODE] [OPTIONS] [FILES]
   This help information:     -h or --help
 ```
 
-#### Check for errors
+### Check for errors
 
 In case of errors, or if the printer is not correctly configured, run the following commands to check for permissions and missing/optional dependencies:
 
@@ -144,7 +142,9 @@ sudo hp-check
 sudo hp-doctor
 ```
 
-#### Uninstall hplip
+The `lsusb` command shows if the printer is connected.
+
+### Uninstall hplip
 
 To remove hplip completely use the following commands:
 
@@ -152,9 +152,3 @@ To remove hplip completely use the following commands:
 sudo apt remove hplip
 sudo apt purge hplip
 ```
-
-#### Useful commands
-
-The following commands shows if the printer is connected:
-
-`lsusb`

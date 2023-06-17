@@ -28,7 +28,7 @@ pip3 install RPi.GPIO
 pip3 install spidev
 ```
 
-**3.** Try the **2.13 inch E-paper(BRW)** with this [**demo code**](). The display will flash red, black, white and finally a picture. The **demo.png** in the code is just a sample picture and can be generated according to your needs. The format of the picture is recommended to use the **PNG format** and the size of the picture: **122x250 pixels**. The specifications of the **2.13 inch E-paper(BRW)** can be found [here]().
+**3.** Try the **2.13 inch E-paper(BRW)** with the [**demo code**]() located in _nas-kit-master_ folder. The display will flash red, black, white and finally a picture. The **demo.png** in the code is just a sample picture and can be generated according to your needs. The format of the picture is recommended to use the **PNG format** and the size of the picture: **122x250 pixels**. The specifications of the **2.13 inch E-paper(BRW)** can be found in _nas-kit-master_ folder.
 
 ```
 python3 eink2.13_demo.py
